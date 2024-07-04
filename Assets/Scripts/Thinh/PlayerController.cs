@@ -18,6 +18,16 @@ public class CharacterController : MonoBehaviour
     Transform feetPosition;
     [SerializeField]
     float groundCheckCircle;
+    [SerializeField]
+    GameObject bullet;
+    [SerializeField]
+    Transform ShootPoint;
+
+    public KeyCode left = KeyCode.LeftArrow;
+    public KeyCode right = KeyCode.RightArrow;
+    public KeyCode jump = KeyCode.UpArrow;
+    public KeyCode pickUp;
+    public KeyCode attack = KeyCode.Space;
 
     void Start()
     {
@@ -26,8 +36,10 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundCheckCircle, groundLayer);
+
         // Move right
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(right))
         {
             transform.position = new Vector3(
                 transform.position.x + speed * Time.deltaTime,
@@ -41,7 +53,7 @@ public class CharacterController : MonoBehaviour
         }
 
         // Move left
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(left))
         {
             transform.position = new Vector3(
                 transform.position.x - speed * Time.deltaTime,
@@ -54,12 +66,18 @@ public class CharacterController : MonoBehaviour
             }
         }
 
-        isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundCheckCircle, groundLayer);
 
         // Jump
-        if (isGrounded && Input.GetKey(KeyCode.UpArrow))
+        if (isGrounded && Input.GetKey(jump))
         {
             rigid.velocity = Vector2.up * jumpForce;
+        }
+
+        // Attack
+        if (Input.GetKey(attack))
+        {
+            GameObject bulletClone = Instantiate(bullet, ShootPoint.position, ShootPoint.rotation);
+            bulletClone.transform.localScale = transform.localScale;
         }
     }
 
