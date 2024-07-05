@@ -74,10 +74,10 @@ public class CharacterController : MonoBehaviour
         }
 
         // Attack
-        if (Input.GetKey(attack))
+        if (Input.GetKeyDown(attack))
         {
             GameObject bulletClone = Instantiate(bullet, ShootPoint.position, ShootPoint.rotation);
-            bulletClone.transform.localScale = transform.localScale;
+            bulletClone.transform.localScale = transform.localScale * 0.1f;
         }
     }
 

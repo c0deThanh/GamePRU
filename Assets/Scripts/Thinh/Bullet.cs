@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     Rigidbody2D rigid;
     [SerializeField]
     GameObject effect;
+    [SerializeField]
+    int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,15 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "Player1")
+        {
+            FindObjectOfType<GameManager>().TakeDamageP1(damage);
+        }
+
+        if (collision.gameObject.tag == "Player2")
+        {
+            FindObjectOfType<GameManager>().TakeDamageP2(damage);
+        }
         Instantiate(effect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
