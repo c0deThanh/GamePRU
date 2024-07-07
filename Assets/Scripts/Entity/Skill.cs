@@ -1,7 +1,10 @@
+using UnityEngine;
+
 namespace Entity
 {
-  public class Skill
+  public class Skill: MonoBehaviour
   {
+    public Skill(){}
     public string Name { get; set; }
     public int Damage { get; set; }
     public float Cooldown { get; set; }

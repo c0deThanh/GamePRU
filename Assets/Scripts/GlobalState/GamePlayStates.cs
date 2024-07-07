@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using Entity;
 using UnityEngine;
 
-public class GamePlayStates
+namespace GlobalState
 {
-  private static GamePlayStates _instance;
-  private GamePlayStates() { }
-
-  public GamePlayStates Instance
+  public class GamePlayStates
   {
-    get
+    private static GamePlayStates _instance;
+    private GamePlayStates() { }
+
+    public static GamePlayStates Instance
     {
-      if (_instance is null) { _instance = new GamePlayStates(); }
+      get
+      {
+        if (_instance is null) { _instance = new GamePlayStates(); }
 
-      return _instance;
+        return _instance;
+      }
     }
-  }
 
-  public PlayerState Player_1 { get; set; } = new PlayerState();
-  public PlayerState Player_2 { get; set; } = new PlayerState();
+    public PlayerState Player_1 { get; set; } = new PlayerState();
+    public PlayerState Player_2 { get; set; } = new PlayerState();
+  }
 }
