@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8982168097524381746}
   - component: {fileID: 6577296460636306190}
   - component: {fileID: 3087298749175082075}
-  - component: {fileID: 987120172674633570}
   - component: {fileID: 4799365496190786817}
   - component: {fileID: 88845599224947712}
+  - component: {fileID: -1381649820387676037}
   m_Layer: 6
   m_Name: Player1
   m_TagString: Player1
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 890387189867618066}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.61, y: 1.19, z: 0}
+  m_LocalPosition: {x: -5.61, y: 1.19, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -192,27 +192,6 @@ MonoBehaviour:
   jump: 273
   pickUp: 0
   attack: 256
---- !u!95 &987120172674633570
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890387189867618066}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e93e1202e7a5e43419c4e726cbe6f146, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4799365496190786817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,9 +213,9 @@ MonoBehaviour:
   groundCheckCircle: 0.2
   bullet: {fileID: 8548552210159664189, guid: 1b8caf6ca2a9e2045b778107067bc81d, type: 3}
   ShootPoint: {fileID: 2279303109256567696}
-  left: 276
-  right: 275
-  jump: 273
+  left: 97
+  right: 100
+  jump: 119
   pickUp: 106
   attack: 32
 --- !u!114 &88845599224947712
@@ -260,11 +239,32 @@ MonoBehaviour:
   groundCheckCircle: 0.2
   bullet: {fileID: 8548552210159664189, guid: 1b8caf6ca2a9e2045b778107067bc81d, type: 3}
   ShootPoint: {fileID: 0}
-  left1: 97
-  right1: 100
-  jump1: 119
+  left1: 276
+  right1: 275
+  jump1: 273
   pickUp1: 269
   attack1: 13
+--- !u!95 &-1381649820387676037
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890387189867618066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd58b1e85e77cdc448d9571bcb207063, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1805233051114401808
 GameObject:
   m_ObjectHideFlags: 0
