@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     int p2MaxHealth = 100;
     int p2Health;
 
+    [SerializeField]
+    AudioClip backGround;
+    AudioSource managerSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +31,14 @@ public class GameManager : MonoBehaviour
 
         p2Health = p2MaxHealth;
         p2HealthBar.SetMaxHealth(p2MaxHealth);
+
+        managerSound=GetComponent<AudioSource>();
+        managerSound.PlayOneShot(backGround);
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void TakeDamageP1(int damage)
