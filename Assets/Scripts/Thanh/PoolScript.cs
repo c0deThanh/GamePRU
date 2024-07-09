@@ -7,7 +7,7 @@ public class PoolScript : MonoBehaviour
     public static PoolScript instance;
 
     private List<GameObject> pooledObject = new List<GameObject>();
-    private int amountToPool = 1;
+    private int amountToPool = 2;
 
     [SerializeField]
     public Transform[] spawnPoints; // Mảng chứa các vị trí spawn cố định

@@ -32,6 +32,8 @@ namespace Behaviour.Player_1
     [SerializeField]
     GameObject bullet;
     [SerializeField]
+    GameObject bulletEffect;
+    [SerializeField]
     Transform ShootPoint;
 
     public KeyCode left = KeyCode.A;
@@ -39,12 +41,16 @@ namespace Behaviour.Player_1
     public KeyCode jump = KeyCode.W;
     public KeyCode pickUp;
     public KeyCode attack = KeyCode.Return;
+    AudioSource soundGun;
+    public AudioClip pistolGun;
 
+    
     private void Start()
     {
       Initialize();
       rigid = GetComponent<Rigidbody2D>();
       animator=GetComponent<Animator>();
+      soundGun=GetComponent<AudioSource>();
       Debug.Log(GamePlayStates.Instance.Player_1.Skills.FirstOrDefault()?.Name);
 
     }
@@ -84,9 +90,13 @@ namespace Behaviour.Player_1
             if (Input.GetKeyDown(attack))
             {
                 GameObject bulletClone = Instantiate(bullet, ShootPoint.position, ShootPoint.rotation);
-                int i = -1;
-                if (facingRight) { i = 1; }
-                bulletClone.transform.localScale = transform.localScale * 0.1f * i;
+                GameObject bulletEffectClone = Instantiate(bulletEffect, ShootPoint.position, ShootPoint.rotation);
+                soundGun.PlayOneShot(pistolGun);
+                bulletClone.transform.localScale = transform.localScale * 0.2f;
+                bulletEffectClone.transform.localScale = transform.localScale * 0.02f;
+                bulletEffectClone.transform.position = new Vector3(ShootPoint.position.x, ShootPoint.position.y, ShootPoint.position.z);
+                Destroy(bulletEffectClone,0.05f);
+
             }
 
             animator.SetFloat("Run", Math.Abs(rigid.velocity.x));

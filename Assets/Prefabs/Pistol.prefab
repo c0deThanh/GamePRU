@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &421468268268091375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7863515634748700868}
+  - component: {fileID: 5846288226452192622}
+  m_Layer: 0
+  m_Name: Pistol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7863515634748700868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421468268268091375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5846288226452192622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421468268268091375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a3263310b5ca746b6cfcdb92a21391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImageGun:
+  - {fileID: 2808490810540027623, guid: 64a42862147141c4abd374fe6ad9304a, type: 3}
+  - {fileID: 1142871111522729084, guid: f193b4b17dee8d442a54ecc09255249d, type: 3}
+  - {fileID: 2072153267492117200, guid: 6cf5632a40903b84b9892bb48d36d0ea, type: 3}
+  - {fileID: 650980141444519771, guid: 107a4e51f8fa02e45ac145019aeef4a9, type: 3}
+  - {fileID: 8101411702197462590, guid: a292973823525e448abe89320eae34fd, type: 3}
+  - {fileID: 8011000869987734259, guid: 2f84e8d6296e6ae4eaae655daff85f7e, type: 3}
+  - {fileID: 9184431582637716452, guid: e5c4c45825519b649bfb13ebddcd00ed, type: 3}
+  - {fileID: 4145969351333857423, guid: ffa60303ac188764cb55a191fc5b80d1, type: 3}
+  - {fileID: 566506953785311184, guid: 4fcc4698b6f90a848a9902317960a1fe, type: 3}
+  - {fileID: 4224190176435257076, guid: 5a1f03a2ab3457a43b6f5c91d2f0c58d, type: 3}
+  Damage: 0
+  TimeReload: 0
+  SpeedBullet: 0
+  AmountBullet: 0
+  Reload: {fileID: 8300000, guid: b9e3fe0bbebde794a8be7f2bf04a9ca4, type: 3}
+  Fire: {fileID: 8300000, guid: 08bd6d073fa40c74995e49d0b9ac3d85, type: 3}
+  Type: Pistol
