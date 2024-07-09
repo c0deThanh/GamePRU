@@ -89,8 +89,6 @@ namespace Behaviour.Player_1
             // Attack
             if (Input.GetKeyDown(attack))
             {
-                int i = -1;
-                if (facingRight) { i = 1; }
                 GameObject bulletClone = Instantiate(bullet, ShootPoint.position, ShootPoint.rotation);
                 GameObject bulletEffectClone = Instantiate(bulletEffect, ShootPoint.position, ShootPoint.rotation);
                 soundGun.PlayOneShot(pistolGun);
