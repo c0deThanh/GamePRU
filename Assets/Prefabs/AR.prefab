@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8280126734218400753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1312336602003848653}
+  - component: {fileID: 696046862276624945}
+  m_Layer: 0
+  m_Name: AR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1312336602003848653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280126734218400753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.82, y: 0.676, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &696046862276624945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280126734218400753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a3263310b5ca746b6cfcdb92a21391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImageGun:
+  - {fileID: 3079202247450356999, guid: 271814394fd406c43abf6539629ceef7, type: 3}
+  - {fileID: 84350735777825885, guid: 3c3a1b45c289b9c44b04a436cb5ffb0d, type: 3}
+  - {fileID: 7970487462765873837, guid: 662616b52594bf74899b043c9796f0bc, type: 3}
+  - {fileID: 2972338728289796042, guid: 2e58ec44dc27d3e4aad9387242a3c5aa, type: 3}
+  - {fileID: 9131649982337872763, guid: 77a0f4a0e21f7d7438511120e303ab6e, type: 3}
+  - {fileID: 8282966097702407410, guid: 3034df6b89286dd47a8a3134087eb09b, type: 3}
+  - {fileID: 52100395982112000, guid: a29964640489b54429369a022820612e, type: 3}
+  - {fileID: 8528423012474740322, guid: 5ef639879d7a0de44a842615fbc49369, type: 3}
+  - {fileID: 3917494345869621538, guid: eda7ce8d74241374990c107f54ff0fbf, type: 3}
+  Damage: 0
+  TimeReload: 0
+  SpeedBullet: 0
+  AmountBullet: 0
+  Reload: {fileID: 0}
+  Fire: {fileID: 0}
+  Type: AR
