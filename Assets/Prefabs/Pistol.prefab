@@ -59,6 +59,6 @@ MonoBehaviour:
   TimeReload: 0
   SpeedBullet: 0
   AmountBullet: 0
-  Reload: {fileID: 0}
-  Fire: {fileID: 0}
+  Reload: {fileID: 8300000, guid: b9e3fe0bbebde794a8be7f2bf04a9ca4, type: 3}
+  Fire: {fileID: 8300000, guid: 08bd6d073fa40c74995e49d0b9ac3d85, type: 3}
   Type: Pistol
