@@ -1,3 +1,4 @@
+using GlobalState;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -27,13 +28,29 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player1")
         {
-            FindObjectOfType<GameManager>().TakeDamageP1(damage);
+            GamePlayStates.Instance.Player_1.Health -= damage;
+            // Assuming you have a HealthBar component to update the health UI
+            FindObjectOfType<GameManager>().TakeDamageP1();
+
+
+            if (GamePlayStates.Instance.Player_1.Health <= 0)
+            {
+                collision.gameObject.SetActive(false);
+            }
+        }
+        else if (collision.gameObject.tag == "Player2")
+        {
+            GamePlayStates.Instance.Player_2.Health -= damage;
+            // Assuming you have a HealthBar component to update the health UI
+            FindObjectOfType<GameManager>().TakeDamageP2();
+
+
+            if (GamePlayStates.Instance.Player_2.Health <= 0)
+            {
+                collision.gameObject.SetActive(false);
+            }
         }
 
-        if (collision.gameObject.tag == "Player2")
-        {
-            FindObjectOfType<GameManager>().TakeDamageP2(damage);
-        }
         Instantiate(effect, transform.position, transform.rotation);
         Destroy(gameObject);
     }

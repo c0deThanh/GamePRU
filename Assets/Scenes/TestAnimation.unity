@@ -1339,10 +1339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 2086544250}
   p1HealthBar: {fileID: 513163531}
-  p1MaxHealth: 100
   player2: {fileID: 611152353}
   p2HealthBar: {fileID: 1181188343}
-  p2MaxHealth: 100
   backGround: {fileID: 8300000, guid: 559c232a43caebe41870ce54786f604e, type: 3}
 --- !u!114 &1776720946
 MonoBehaviour:
