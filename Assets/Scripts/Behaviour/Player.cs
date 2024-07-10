@@ -20,5 +20,17 @@ namespace Behaviour
         attack.Invoke(opponentWeaponSkill, _state.Health);
       }
     }
-  }
+
+        public void Heal(int amount)
+        {
+            if (_state.Health < 100)
+            {
+                _state.Health += amount;
+                if (_state.Health > 100)
+                {
+                    _state.Health = 100;
+                }
+            }
+        }
+    }
 }
