@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Entity;
+using UnityEngine.U2D.Animation;
 
 public class GunPoolScript : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GunPoolScript : MonoBehaviour
     public AudioClip Reload;
     public AudioClip Fire;
     public string Type;
+    public List<SpriteLibraryAsset> AnimationGun;
 
 
     private void Awake()

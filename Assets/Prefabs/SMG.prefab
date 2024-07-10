@@ -56,3 +56,8 @@ MonoBehaviour:
   Reload: {fileID: 8300000, guid: c6de6085a9569a54ba8e7c2c1d41d7d7, type: 3}
   Fire: {fileID: 8300000, guid: 0a61976af7fd70e4fb73b0f97a281f97, type: 3}
   Type: SMG
+  AnimationGun:
+  - {fileID: 7108339969198208228, guid: c6a7786624b121b4eab590c64176152c, type: 3}
+  - {fileID: 7108339969198208228, guid: 8dcc96ea504a9c548b9adcdbd253544a, type: 3}
+  - {fileID: 7108339969198208228, guid: 0071fb33c63b0434f813ca4b1b58c878, type: 3}
+  - {fileID: 7108339969198208228, guid: c93db1f8c4dc37642b70ab6d52fbe11f, type: 3}

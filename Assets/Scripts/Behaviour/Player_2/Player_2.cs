@@ -13,6 +13,7 @@ namespace Behaviour.Player_2
     float jumpForce = 10f;
     Rigidbody2D rigid;
     Animator animator;
+    Animator animatorGun;
     private bool facingRight = false;
 
     [SerializeField]
@@ -47,6 +48,8 @@ namespace Behaviour.Player_2
         soundGun=GetComponent<AudioSource>();
         animator.SetLayerWeight(animator.GetLayerIndex("Player2"), 1);
         animator.SetLayerWeight(animator.GetLayerIndex("Player1"), 0);
+        animatorGun=ShootPoint.GetChild(0).GetComponent<Animator>();
+        //ShootPoint.GetChild(0).GetComponent<GameObject>().transform.localScale= new Vector3(-1,1,1);
             
             
         }
@@ -85,6 +88,7 @@ namespace Behaviour.Player_2
             // Attack
             if (Input.GetKeyDown(attack1))
             {
+                animatorGun.SetTrigger("Shoot");
                 GameObject bulletClone = Instantiate(bullet, ShootPoint.position, ShootPoint.rotation);
                 GameObject bulletEffectClone = Instantiate(bulletEffect, ShootPoint.position, ShootPoint.rotation);
                 soundGun.PlayOneShot(pistolGun);
