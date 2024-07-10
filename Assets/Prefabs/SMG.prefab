@@ -55,4 +55,4 @@ MonoBehaviour:
   AmountBullet: 0
   Reload: {fileID: 8300000, guid: c6de6085a9569a54ba8e7c2c1d41d7d7, type: 3}
   Fire: {fileID: 8300000, guid: 0a61976af7fd70e4fb73b0f97a281f97, type: 3}
-  Type: 
+  Type: SMG
