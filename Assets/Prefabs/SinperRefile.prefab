@@ -57,4 +57,4 @@ MonoBehaviour:
   AmountBullet: 0
   Reload: {fileID: 8300000, guid: a32d747a5ea633948b890fcc6a3a67cb, type: 3}
   Fire: {fileID: 8300000, guid: 1c931ad68ae9db346b3ead70a13f8e04, type: 3}
-  Type: 
+  Type: SniperRifle
