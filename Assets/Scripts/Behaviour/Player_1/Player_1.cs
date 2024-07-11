@@ -5,46 +5,49 @@ using Entity;
 using GlobalState;
 using Unity.Burst;
 using Unity.Burst.Intrinsics;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Behaviour.Player_1
 {
-  public class Player1: Player
-  {
-    [SerializeField]
-    float speed = 5f;
-    [SerializeField]
-    float jumpForce = 15f;
-    Rigidbody2D rigid;
-    Animator animator;
-    Animator animatorGun;
-    private bool facingRight = true;
+    public class Player1 : Player
+    {
+        [SerializeField]
+        float speed = 5f;
+        [SerializeField]
+        float jumpForce = 15f;
+        Rigidbody2D rigid;
+        Animator animator;
+        public Animator animatorGun { set; get; }
+        private bool facingRight = true;
 
-    [SerializeField]
-    LayerMask groundLayer;
-    private bool isGrounded;
-    private float isMove;
+        [SerializeField]
+        LayerMask groundLayer;
+        private bool isGrounded;
+        private float isMove;
 
-    [SerializeField]
-    Transform feetPosition;
-    [SerializeField]
-    float groundCheckCircle;
-    [SerializeField]
-    GameObject bullet;
-    [SerializeField]
-    GameObject bulletEffect;
-    [SerializeField]
-    Transform ShootPoint;
+        [SerializeField]
+        Transform feetPosition;
+        [SerializeField]
+        float groundCheckCircle;
+        public GameObject bullet;
+        [SerializeField]
+        GameObject bulletEffect;
+        [SerializeField]
+        GameObject ShootPoint;
 
-    public KeyCode left = KeyCode.A;
-    public KeyCode right = KeyCode.D;
-    public KeyCode jump = KeyCode.W;
-    public KeyCode pickUp;
-    public KeyCode attack = KeyCode.Return;
-    AudioSource soundGun;
-    public AudioClip pistolGun;
+        public KeyCode left = KeyCode.A;
+        public KeyCode right = KeyCode.D;
+        public KeyCode jump = KeyCode.W;
+        public KeyCode pickUp;
+        public KeyCode attack = KeyCode.Return;
+        AudioSource soundGun;
+        public AudioClip pistolGun;
+        public AudioClip reloadGun;
 
+        public GameObject shootPointPresent { set; get; }
+        float timer=0;
     
     private void Start()
     {
@@ -52,11 +55,13 @@ namespace Behaviour.Player_1
       rigid = GetComponent<Rigidbody2D>();
       animator=GetComponent<Animator>();
       soundGun=GetComponent<AudioSource>();
-      animatorGun=ShootPoint.GetChild(0).GetComponent<Animator>();
+      animatorGun = ShootPoint.transform.GetChild(0).GetComponent<Animator>();
       //Debug.Log(GamePlayStates.Instance.Player_1.Skills.FirstOrDefault()?.Name);
+      shootPointPresent=ShootPoint;
 
     }
     private void Update() {
+            timer += Time.deltaTime;
             isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundCheckCircle, groundLayer);
             isMove = Input.GetAxisRaw("Horizontal");
             // Move right
@@ -89,15 +94,21 @@ namespace Behaviour.Player_1
             }
 
             // Attack
-            if (Input.GetKeyDown(attack))
+            if (Input.GetKeyDown(attack) && timer >= GamePlayStates.Instance.Player_1.TimeDelay && GamePlayStates.Instance.Player_1.Amount>0)
             {
+                timer = 0;
                 animatorGun.SetTrigger("Shoot");
-                GameObject bulletClone = Instantiate(bullet, ShootPoint.position, ShootPoint.rotation);
-                GameObject bulletEffectClone = Instantiate(bulletEffect, ShootPoint.position, ShootPoint.rotation);
+
+                GamePlayStates.Instance.Player_1.Amount -= 1;
+                //Debug.Log(GamePlayStates.Instance.Player_1.Amount);
+                //set dame bullet
+                GameObject bulletClone = Instantiate(bullet, shootPointPresent.transform.position, shootPointPresent.transform.rotation);
+
+                GameObject bulletEffectClone = Instantiate(bulletEffect, shootPointPresent.transform.position, shootPointPresent.transform.rotation);
                 soundGun.PlayOneShot(pistolGun);
                 bulletClone.transform.localScale = transform.localScale * 0.2f;
                 bulletEffectClone.transform.localScale = transform.localScale * 0.02f;
-                bulletEffectClone.transform.position = new Vector3(ShootPoint.position.x, ShootPoint.position.y, ShootPoint.position.z);
+                bulletEffectClone.transform.position = new Vector3(shootPointPresent.transform.position.x, shootPointPresent.transform.position.y, shootPointPresent.transform.position.z);
                 Destroy(bulletEffectClone,0.05f);
 
             }
