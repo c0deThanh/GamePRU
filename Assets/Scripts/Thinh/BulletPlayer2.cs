@@ -1,16 +1,12 @@
 using GlobalState;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletPlayer2 : MonoBehaviour
 {
-    [SerializeField]
-    float speed = 5f;
     [SerializeField]
     Rigidbody2D rigid;
     [SerializeField]
     GameObject effect;
-    [SerializeField]
-    int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +17,16 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigid.velocity = new Vector2(speed * transform.localScale.x, 0);
+        rigid.velocity = new Vector2(GamePlayStates.Instance.Player_2.SpeedBullet * transform.localScale.x, 0);
+        Destroy(gameObject, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log(GamePlayStates.Instance.Player_2.Damage);
         if (collision.gameObject.tag == "Player1")
         {
-            GamePlayStates.Instance.Player_1.Health -= damage;
+            GamePlayStates.Instance.Player_1.Health -= GamePlayStates.Instance.Player_2.Damage;
             // Assuming you have a HealthBar component to update the health UI
             FindObjectOfType<GameManager>().TakeDamageP1();
 
@@ -37,21 +35,10 @@ public class Bullet : MonoBehaviour
             {
                 collision.gameObject.SetActive(false);
             }
-        }
-        else if (collision.gameObject.tag == "Player2")
-        {
-            GamePlayStates.Instance.Player_2.Health -= damage;
-            // Assuming you have a HealthBar component to update the health UI
-            FindObjectOfType<GameManager>().TakeDamageP2();
-
-
-            if (GamePlayStates.Instance.Player_2.Health <= 0)
-            {
-                collision.gameObject.SetActive(false);
-            }
+            Instantiate(effect, transform.position, transform.rotation);
         }
 
-        Instantiate(effect, transform.position, transform.rotation);
+        
         Destroy(gameObject);
     }
 }

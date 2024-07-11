@@ -11,13 +11,13 @@ namespace Behaviour
 
         protected void OnCollisionEnterAttacked(Collision2D collision, Action<Skill, int> attack)
         {
-            var opponent = collision.gameObject;
-            if (opponent.CompareTag("Weapon"))
-            {
-                var opponentWeaponSkill = opponent.GetComponent<Skill>();
-                _state.Health -= opponentWeaponSkill.Damage;
-                attack.Invoke(opponentWeaponSkill, _state.Health);
-            }
+            //var opponent = collision.gameObject;
+            //if (opponent.CompareTag("Weapon"))
+            //{
+            //    var opponentWeaponSkill = opponent.GetComponent<Skill>();
+            //    _state.Health -= opponentWeaponSkill.Damage;
+            //    attack.Invoke(opponentWeaponSkill, _state.Health);
+            //}
         }
 
         public void Heal(int amount)
