@@ -51,9 +51,9 @@ public class SmallPotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && headInstance.activeInHierarchy)
-        {
-            headInstance.SetActive(false);
-        }
+        //if (Input.GetKeyDown(KeyCode.X) && headInstance.activeInHierarchy)
+        //{
+        //    headInstance.SetActive(false);
+        //}
     }
 }

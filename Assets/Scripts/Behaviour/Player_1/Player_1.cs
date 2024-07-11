@@ -53,7 +53,7 @@ namespace Behaviour.Player_1
       animator=GetComponent<Animator>();
       soundGun=GetComponent<AudioSource>();
       animatorGun=ShootPoint.GetChild(0).GetComponent<Animator>();
-      Debug.Log(GamePlayStates.Instance.Player_1.Skills.FirstOrDefault()?.Name);
+      //Debug.Log(GamePlayStates.Instance.Player_1.Skills.FirstOrDefault()?.Name);
 
     }
     private void Update() {

@@ -1,9 +1,4 @@
-using Behaviour;
-using Behaviour.Player_1;
-using Behaviour.Player_2;
-using Entity;
-using System.Collections;
-using System.Collections.Generic;
+using GlobalState;
 using UnityEngine;
 
 public class HealScript : MonoBehaviour
@@ -25,7 +20,7 @@ public class HealScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         int numberHeal = 0;
-        if(TypePotion == "Small")
+        if (TypePotion == "Small")
         {
             numberHeal = 20;
         }
@@ -34,12 +29,23 @@ public class HealScript : MonoBehaviour
             numberHeal = 50;
         }
 
-        if (collision.gameObject.tag == "Player2")
+        if (collision.gameObject.tag == "Player1")
         {
+            /*            gameObject.SetActive(false);
+                        var player2 = collision.gameObject.GetComponent<Player2>();
+                        player2.Heal(numberHeal);
+                        FindObjectOfType<GameManager>().TakeDamageP2();*/
             gameObject.SetActive(false);
-            var player2 = collision.gameObject.GetComponent<Player2>();
-            var player = player2.GetComponent<Player>();
-            player.Heal(numberHeal);
+            var _p1 = GamePlayStates.Instance.Player_1;
+            _p1.Health += numberHeal;
+
+            if (_p1.Health > _p1.MaxHealth)
+            {
+                _p1.Health = _p1.MaxHealth;
+            }
+            // Assuming you have a HealthBar component to update the health UI
+            FindObjectOfType<GameManager>().TakeDamageP1();
+
 
             //var curet = player._state.Health;
             //if (x._state.Health < 100)
@@ -61,6 +67,20 @@ public class HealScript : MonoBehaviour
             //        GamePlayStates.Instance.Player_1.Health = 100;
             //    }
             //}
+        }
+
+        if (collision.gameObject.tag == "Player2")
+        {
+            gameObject.SetActive(false);
+            var _p2 = GamePlayStates.Instance.Player_2;
+            _p2.Health += numberHeal;
+
+            if (_p2.Health > _p2.MaxHealth)
+            {
+                _p2.Health = _p2.MaxHealth;
+            }
+            // Assuming you have a HealthBar component to update the health UI
+            FindObjectOfType<GameManager>().TakeDamageP2();
         }
     }
 }
