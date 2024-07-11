@@ -30,7 +30,7 @@ public class GunSpawn : MonoBehaviour
 
     IEnumerator SpawnHeadEveryInterval(float interval)
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(2f);
 
         while (true)
         {
@@ -44,9 +44,12 @@ public class GunSpawn : MonoBehaviour
                 // Select a random spawn position from the spawnPoints array
                 int randomIndex = Random.Range(0, spawnPoints.Length);
                 Vector3 spawnPosition = spawnPoints[randomIndex].position;
+                Transform spawnParent = spawnPoints[randomIndex];
 
                 // Instantiate the selected prefab at the spawn position
                 headInstance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
+
+                headInstance.transform.SetParent(spawnParent, true);
                 headInstance.SetActive(true);
                 //headInstance.GetComponent<HeadController>().createHealthEnemy();
             }
