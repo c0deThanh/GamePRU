@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 8280126734218400753}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.82, y: 0.676, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58,6 +58,16 @@ MonoBehaviour:
   TimeReload: 0
   SpeedBullet: 0
   AmountBullet: 0
-  Reload: {fileID: 0}
-  Fire: {fileID: 0}
+  Reload: {fileID: 8300000, guid: c0d8a7f732bf80646a610ddb63a86b1c, type: 3}
+  Fire: {fileID: 8300000, guid: ad8b64f966a73844da7a2abd17f4da10, type: 3}
   Type: AR
+  AnimationGun:
+  - {fileID: 7108339969198208228, guid: f6e5365331872664ea87757ac57e024b, type: 3}
+  - {fileID: 7108339969198208228, guid: b41f7d6cf3236074ebf4c22b1195b2c6, type: 3}
+  - {fileID: 7108339969198208228, guid: a382e39b5f734074ebabe14b4d53cacc, type: 3}
+  - {fileID: 7108339969198208228, guid: 24fbbdcf4b1b686489e904e8031869d7, type: 3}
+  - {fileID: 7108339969198208228, guid: 316e9fffb5e25fe49be95c1013ecd793, type: 3}
+  - {fileID: 7108339969198208228, guid: 4a7f5d7e03ec54b42a8dcac8780031d6, type: 3}
+  - {fileID: 7108339969198208228, guid: 5cb025304371aa24286dae01a5726f10, type: 3}
+  - {fileID: 7108339969198208228, guid: c4072671fd580b34b914fff96b776db0, type: 3}
+  - {fileID: 7108339969198208228, guid: 340fa61213d6fb745871bab65b2fa43d, type: 3}

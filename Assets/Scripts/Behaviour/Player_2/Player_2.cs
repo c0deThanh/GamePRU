@@ -13,6 +13,7 @@ namespace Behaviour.Player_2
     float jumpForce = 10f;
     Rigidbody2D rigid;
     Animator animator;
+    public Animator animatorGun { set; get; }
     private bool facingRight = false;
 
     [SerializeField]
@@ -25,11 +26,11 @@ namespace Behaviour.Player_2
     [SerializeField]
     float groundCheckCircle;
     [SerializeField]
-    GameObject bullet;
+    public GameObject bullet;
     [SerializeField]
     GameObject bulletEffect;
     [SerializeField]
-    Transform ShootPoint;
+    GameObject ShootPoint;
 
     public KeyCode left1 = KeyCode.LeftArrow;
     public KeyCode right1 = KeyCode.RightArrow;
@@ -39,6 +40,11 @@ namespace Behaviour.Player_2
 
     AudioSource soundGun;
     public AudioClip pistolGun;
+    public AudioClip reloadGun;
+    
+
+    public GameObject shootPointPresent { set; get; }
+        float timer=0;
     private void Start()
     {
       Initialize();
@@ -47,10 +53,15 @@ namespace Behaviour.Player_2
         soundGun=GetComponent<AudioSource>();
         animator.SetLayerWeight(animator.GetLayerIndex("Player2"), 1);
         animator.SetLayerWeight(animator.GetLayerIndex("Player1"), 0);
+        animatorGun = ShootPoint.transform.GetChild(0).GetComponent<Animator>();
+       //ShootPoint.GetChild(0).GetComponent<GameObject>().transform.localScale= new Vector3(-1,1,1);
+       shootPointPresent =ShootPoint;  
+       
+
             
-            
-        }
+    }
     private void Update() {
+            timer += Time.deltaTime;
             isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundCheckCircle, groundLayer);
             isMove = Input.GetAxisRaw("Horizontal");
             // Move right
@@ -83,14 +94,21 @@ namespace Behaviour.Player_2
             }
 
             // Attack
-            if (Input.GetKeyDown(attack1))
+            if (Input.GetKeyDown(attack1) && timer >= GamePlayStates.Instance.Player_2.TimeDelay && GamePlayStates.Instance.Player_2.Amount > 0)
             {
-                GameObject bulletClone = Instantiate(bullet, ShootPoint.position, ShootPoint.rotation);
-                GameObject bulletEffectClone = Instantiate(bulletEffect, ShootPoint.position, ShootPoint.rotation);
+                timer = 0;
+                animatorGun.SetTrigger("Shoot");
+                GamePlayStates.Instance.Player_2.Amount -= 1;
+                //Debug.Log(GamePlayStates.Instance.Player_2.Amount);
+                GameObject bulletEffectClone = Instantiate(bulletEffect, shootPointPresent.transform.position, shootPointPresent.transform.rotation);
+
+                //set dame bullet
+                GameObject bulletClone = Instantiate(bullet, shootPointPresent.transform.position, shootPointPresent.transform.rotation);
+
                 soundGun.PlayOneShot(pistolGun);
                 bulletClone.transform.localScale = transform.localScale * 0.2f*-1;
                 bulletEffectClone.transform.localScale = transform.localScale * 0.02f;
-                bulletEffectClone.transform.position = new Vector3(ShootPoint.position.x, ShootPoint.position.y, ShootPoint.position.z);
+                bulletEffectClone.transform.position = new Vector3(shootPointPresent.transform.position.x, shootPointPresent.transform.position.y, shootPointPresent.transform.position.z);
                 Destroy(bulletEffectClone, 0.05f);
             }
 

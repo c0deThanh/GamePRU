@@ -57,4 +57,11 @@ MonoBehaviour:
   AmountBullet: 0
   Reload: {fileID: 8300000, guid: a32d747a5ea633948b890fcc6a3a67cb, type: 3}
   Fire: {fileID: 8300000, guid: 1c931ad68ae9db346b3ead70a13f8e04, type: 3}
-  Type: 
+  Type: SniperRifle
+  AnimationGun:
+  - {fileID: 7108339969198208228, guid: e2e2f40c79c72724087bd96683e91cfd, type: 3}
+  - {fileID: 7108339969198208228, guid: 5f2e763a97e0cc94581d772bf51de16b, type: 3}
+  - {fileID: 7108339969198208228, guid: 365f702b3bc84b04188cdc2343d3545a, type: 3}
+  - {fileID: 7108339969198208228, guid: fedf657e0283f3e4d8bbb6fe8af943aa, type: 3}
+  - {fileID: 7108339969198208228, guid: 325f8f1e3f3340a4b92dec79d6e06efe, type: 3}
+  - {fileID: 7108339969198208228, guid: 14bbc5d695a4e2c43a019641057c1990, type: 3}

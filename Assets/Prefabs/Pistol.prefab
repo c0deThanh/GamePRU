@@ -62,3 +62,14 @@ MonoBehaviour:
   Reload: {fileID: 8300000, guid: b9e3fe0bbebde794a8be7f2bf04a9ca4, type: 3}
   Fire: {fileID: 8300000, guid: 08bd6d073fa40c74995e49d0b9ac3d85, type: 3}
   Type: Pistol
+  AnimationGun:
+  - {fileID: 7108339969198208228, guid: 57626ea2127e0ae41bb04f815c3f16ac, type: 3}
+  - {fileID: 7108339969198208228, guid: dc390f6ecf9f26a4cb41340ac18d9636, type: 3}
+  - {fileID: 7108339969198208228, guid: a5e6e6360b8302a4b8fc762ed977e751, type: 3}
+  - {fileID: 7108339969198208228, guid: 3b6d0caad7b149048a1a1e89051be77a, type: 3}
+  - {fileID: 7108339969198208228, guid: b471e74bbf2ecb5419cc51131257c7e5, type: 3}
+  - {fileID: 7108339969198208228, guid: ab52383312564ef4da7c4574ac41ea3c, type: 3}
+  - {fileID: 7108339969198208228, guid: 9bc1b5786922bd649897620588005ead, type: 3}
+  - {fileID: 7108339969198208228, guid: 128e7372d3f3ffb4897669fa7ffff34c, type: 3}
+  - {fileID: 7108339969198208228, guid: 17633b98936f6154f818492407a1607b, type: 3}
+  - {fileID: 7108339969198208228, guid: 5977753f2e45c444d8b25567adce620d, type: 3}
