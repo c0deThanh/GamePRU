@@ -35,6 +35,7 @@ public class HealScript : MonoBehaviour
                         var player2 = collision.gameObject.GetComponent<Player2>();
                         player2.Heal(numberHeal);
                         FindObjectOfType<GameManager>().TakeDamageP2();*/
+            gameObject.SetActive(false);
             var _p1 = GamePlayStates.Instance.Player_1;
             _p1.Health += numberHeal;
 
@@ -70,6 +71,7 @@ public class HealScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Player2")
         {
+            gameObject.SetActive(false);
             var _p2 = GamePlayStates.Instance.Player_2;
             _p2.Health += numberHeal;
 
