@@ -1,3 +1,4 @@
+using GlobalState;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,17 +7,11 @@ public class GameManager : MonoBehaviour
     GameObject player1;
     [SerializeField]
     HealthBar p1HealthBar;
-    [SerializeField]
-    int p1MaxHealth = 100;
-    int p1Health;
 
     [SerializeField]
     GameObject player2;
     [SerializeField]
     HealthBar p2HealthBar;
-    [SerializeField]
-    int p2MaxHealth = 100;
-    int p2Health;
 
     [SerializeField]
     AudioClip backGround;
@@ -26,13 +21,24 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        p1Health = p1MaxHealth;
-        p1HealthBar.SetMaxHealth(p1MaxHealth);
+        if (GamePlayStates.Instance.Player_1.Health == 0)
+        {
+            GamePlayStates.Instance.Player_1.Health = GamePlayStates.Instance.Player_1.MaxHealth;
+        }
+        p1HealthBar.SetMaxHealth(GamePlayStates.Instance.Player_1.MaxHealth);
+        p1HealthBar.SetHealth(GamePlayStates.Instance.Player_1.Health);
 
-        p2Health = p2MaxHealth;
-        p2HealthBar.SetMaxHealth(p2MaxHealth);
 
-        managerSound=GetComponent<AudioSource>();
+        // Initialize player 2 health
+        GamePlayStates.Instance.Player_2.MaxHealth = 100; // Assuming max health is 100
+        if (GamePlayStates.Instance.Player_2.Health == 0)
+        {
+            GamePlayStates.Instance.Player_2.Health = GamePlayStates.Instance.Player_2.MaxHealth;
+        }
+        p2HealthBar.SetMaxHealth(GamePlayStates.Instance.Player_2.MaxHealth);
+        p2HealthBar.SetHealth(GamePlayStates.Instance.Player_2.Health);
+
+        managerSound = GetComponent<AudioSource>();
         managerSound.PlayOneShot(backGround);
     }
 
@@ -41,20 +47,19 @@ public class GameManager : MonoBehaviour
     {
     }
 
-    public void TakeDamageP1(int damage)
+    public void TakeDamageP1()
     {
-        p1Health -= damage;
-        p1HealthBar.SetHealth(p1Health);
-        if (p1Health <= 0)
+        p1HealthBar.SetHealth(GamePlayStates.Instance.Player_1.Health);
+        if (GamePlayStates.Instance.Player_1.Health <= 0)
         {
             player1.SetActive(false);
         }
     }
-    public void TakeDamageP2(int damage)
+
+    public void TakeDamageP2()
     {
-        p2Health -= damage;
-        p2HealthBar.SetHealth(p2Health);
-        if (p2Health <= 0)
+        p2HealthBar.SetHealth(GamePlayStates.Instance.Player_2.Health);
+        if (GamePlayStates.Instance.Player_2.Health <= 0)
         {
             player2.SetActive(false);
         }
