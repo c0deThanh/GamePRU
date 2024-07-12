@@ -966,7 +966,7 @@ MonoBehaviour:
   right1: 275
   jump1: 273
   pickUp1: 261
-  attack1: 13
+  attack1: 256
   pistolGun: {fileID: 8300000, guid: 08bd6d073fa40c74995e49d0b9ac3d85, type: 3}
   reloadGun: {fileID: 0}
 --- !u!82 &497175626526389624
@@ -981,7 +981,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0

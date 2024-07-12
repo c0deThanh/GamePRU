@@ -94,7 +94,7 @@ namespace Behaviour.Player_1
             }
 
             // Attack
-            if (Input.GetKeyDown(attack) && timer >= GamePlayStates.Instance.Player_1.TimeDelay && GamePlayStates.Instance.Player_1.Amount>0)
+            if (Input.GetKey(attack) && timer >= GamePlayStates.Instance.Player_1.TimeDelay && GamePlayStates.Instance.Player_1.Amount>0)
             {
                 timer = 0;
                 animatorGun.SetTrigger("Shoot");
