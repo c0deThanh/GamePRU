@@ -3,18 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ForestMap : MonoBehaviour
+public class ChoosingMap : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene("GamePlay", LoadSceneMode.Additive);
-        // SceneManager.LoadScene("Canvas", LoadSceneMode.Additive);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ToForestScene()
+    {
+        SceneManager.LoadScene("ForestMap");
+
+    }
+    public void ToGargenScene()
+    {
+        SceneManager.LoadScene("GardenMap");
+
     }
 }

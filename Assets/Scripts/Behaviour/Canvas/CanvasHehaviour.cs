@@ -27,7 +27,6 @@ public class CanvasHehaviour : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    Debug.Log(global.Player_1.Amount);
     bulletP1_b.SetBullet(global.Player_1.Amount, global.Player_1.AmountBullet);
     bulletP2_b.SetBullet(global.Player_2.Amount, global.Player_2.AmountBullet);
     healthP1_b.SetHealth(global.Player_1.Health, global.Player_1.MaxHealth);

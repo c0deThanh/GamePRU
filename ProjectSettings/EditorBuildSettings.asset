@@ -12,6 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/ForestMap.unity
     guid: b919273f2e5904893914f764b9c9edd8
   - enabled: 1
+    path: Assets/Scenes/GamePlay.unity
+    guid: a4ef949adbd89314c9706b0150841f57
+  - enabled: 1
     path: Assets/Scenes/Canvas.unity
     guid: b98b1b9684e36427281064c03a11aadf
+  - enabled: 1
+    path: Assets/Scenes/MainGameScene.unity
+    guid: 1e989f7e17815443cb1c94e23abcb4bc
+  - enabled: 1
+    path: Assets/Scenes/GardenMap.unity
+    guid: 890f52daa1b4149b09632e119c3e4f08
+  - enabled: 1
+    path: Assets/Scenes/StartGame.unity
+    guid: f6943134c0ad6442887b009d2de368ee
+  - enabled: 1
+    path: Assets/Scenes/FinalGame.unity
+    guid: a1bf1ee2cdc234d1d85eac3c8c6d8069
   m_configObjects: {}
