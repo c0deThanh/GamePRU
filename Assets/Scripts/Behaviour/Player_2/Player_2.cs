@@ -41,9 +41,10 @@ namespace Behaviour.Player_2
     AudioSource soundGun;
     public AudioClip pistolGun;
     public AudioClip reloadGun;
-    
+    AudioManager audioManager;
 
-    public GameObject shootPointPresent { set; get; }
+
+        public GameObject shootPointPresent { set; get; }
         float timer=0;
     private void Start()
     {
@@ -60,7 +61,13 @@ namespace Behaviour.Player_2
 
             
     }
-    private void Update() {
+///
+        public void Awake()
+        {
+             audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+        }
+        private void Update() {
             timer += Time.deltaTime;
             isGrounded = Physics2D.OverlapCircle(feetPosition.position, groundCheckCircle, groundLayer);
             isMove = Input.GetAxisRaw("Horizontal");
@@ -105,7 +112,8 @@ namespace Behaviour.Player_2
                 //set dame bullet
                 GameObject bulletClone = Instantiate(bullet, shootPointPresent.transform.position, shootPointPresent.transform.rotation);
 
-                soundGun.PlayOneShot(pistolGun);
+                //soundGun.PlayOneShot(pistolGun);
+                audioManager.PlaySFX(pistolGun);
                 bulletClone.transform.localScale = transform.localScale * 0.2f*-1;
                 bulletEffectClone.transform.localScale = transform.localScale * 0.02f;
                 bulletEffectClone.transform.position = new Vector3(shootPointPresent.transform.position.x, shootPointPresent.transform.position.y, shootPointPresent.transform.position.z);
