@@ -1,3 +1,4 @@
+using Behaviour.Player_1;
 using GlobalState;
 using UnityEngine;
 
@@ -31,19 +32,19 @@ public class HealScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Player1")
         {
-            /*            gameObject.SetActive(false);
-                        var player2 = collision.gameObject.GetComponent<Player2>();
-                        player2.Heal(numberHeal);
-                        FindObjectOfType<GameManager>().TakeDamageP2();*/
-            var _p1 = GamePlayStates.Instance.Player_1;
-            _p1.Health += numberHeal;
-
-            if (_p1.Health > _p1.MaxHealth)
-            {
-                _p1.Health = _p1.MaxHealth;
-            }
-            // Assuming you have a HealthBar component to update the health UI
+            gameObject.SetActive(false);
+            var player1 = collision.gameObject.GetComponent<Player1>();
+            player1.Heal(numberHeal);
             FindObjectOfType<GameManager>().TakeDamageP1();
+            /*            var _p1 = GamePlayStates.Instance.Player_1;
+                        _p1.Health += numberHeal;
+
+                        if (_p1.Health > _p1.MaxHealth)
+                        {
+                            _p1.Health = _p1.MaxHealth;
+                        }
+                        // Assuming you have a HealthBar component to update the health UI
+                        FindObjectOfType<GameManager>().TakeDamageP1();*/
 
 
             //var curet = player._state.Health;
