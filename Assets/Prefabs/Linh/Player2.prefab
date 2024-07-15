@@ -937,8 +937,8 @@ MonoBehaviour:
   left1: 276
   right1: 275
   jump1: 273
-  pickUp1: 261
-  attack1: 256
+  pickUp1: 108
+  attack1: 109
   pistolGun: {fileID: 8300000, guid: 08bd6d073fa40c74995e49d0b9ac3d85, type: 3}
   reloadGun: {fileID: 0}
 --- !u!82 &497175626526389624
