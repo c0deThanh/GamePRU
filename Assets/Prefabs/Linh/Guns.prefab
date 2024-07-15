@@ -489,9 +489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a3263310b5ca746b6cfcdb92a21391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 12
+  Damage: 5
   TimeReload: 3
-  TimeDelay: 0.6
+  TimeDelay: 0.23
   SpeedBullet: 180
   AmountBullet: 50
   Reload: {fileID: 8300000, guid: c6de6085a9569a54ba8e7c2c1d41d7d7, type: 3}
@@ -706,11 +706,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a3263310b5ca746b6cfcdb92a21391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 50
   TimeReload: 3
   TimeDelay: 1
   SpeedBullet: 300
-  AmountBullet: 5
+  AmountBullet: 6
   Reload: {fileID: 8300000, guid: a32d747a5ea633948b890fcc6a3a67cb, type: 3}
   Shoot: {fileID: 8300000, guid: 1c931ad68ae9db346b3ead70a13f8e04, type: 3}
   Type: Sniper
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   TimeReload: 1
   TimeDelay: 0.67
   SpeedBullet: 80
-  AmountBullet: 7
+  AmountBullet: 13
   Reload: {fileID: 8300000, guid: b9e3fe0bbebde794a8be7f2bf04a9ca4, type: 3}
   Shoot: {fileID: 8300000, guid: 08bd6d073fa40c74995e49d0b9ac3d85, type: 3}
   Type: Pistol
@@ -1505,7 +1505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 14
   TimeReload: 2
-  TimeDelay: 0.65
+  TimeDelay: 0.2
   SpeedBullet: 180
   AmountBullet: 40
   Reload: {fileID: 8300000, guid: c6de6085a9569a54ba8e7c2c1d41d7d7, type: 3}
