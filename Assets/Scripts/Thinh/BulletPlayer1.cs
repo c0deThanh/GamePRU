@@ -28,7 +28,7 @@ public class BulletPlayer1 : MonoBehaviour
         {
             GamePlayStates.Instance.Player_2.Health -= GamePlayStates.Instance.Player_1.Damage;
             // Assuming you have a HealthBar component to update the health UI
-            FindObjectOfType<GameManager>().TakeDamageP2();
+            // FindObjectOfType<GameManager>().TakeDamageP2();
 
 
             if (GamePlayStates.Instance.Player_2.Health <= 0)

@@ -638,7 +638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6011022721015638609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -734,7 +734,6 @@ GameObject:
   - component: {fileID: 65861054359327210}
   - component: {fileID: 9065124845065761043}
   - component: {fileID: 3887364894193362707}
-  - component: {fileID: 9024743249990487158}
   - component: {fileID: 1447176829662812806}
   - component: {fileID: 3759061784409427465}
   - component: {fileID: 497175626526389624}
@@ -892,33 +891,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78446865, y: 1.2495162}
   m_EdgeRadius: 0
---- !u!114 &9024743249990487158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3297387554413793095}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 047bab2b94414ae43bb2376f1489fa54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 25
-  rigid: {fileID: 9065124845065761043}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  feetPosition: {fileID: 9220789469317575263}
-  groundCheckCircle: 0.2
-  bullet: {fileID: 8548552210159664189, guid: 1b8caf6ca2a9e2045b778107067bc81d, type: 3}
-  ShootPoint: {fileID: 6106998808067342082}
-  left: 97
-  right: 100
-  jump: 119
-  pickUp: 0
-  attack: 106
 --- !u!95 &1447176829662812806
 Animator:
   serializedVersion: 5
@@ -1467,7 +1439,7 @@ RectTransform:
   m_Father: {fileID: 8223861573811318858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -1,5 +1,6 @@
 using GlobalState;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.LoadScene("Canvas", LoadSceneMode.Additive);
         if (GamePlayStates.Instance.Player_1.Health == 0)
         {
             GamePlayStates.Instance.Player_1.Health = GamePlayStates.Instance.Player_1.MaxHealth;

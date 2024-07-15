@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 6760291385884250901}
   - component: {fileID: 8982168097524381746}
   - component: {fileID: 6577296460636306190}
-  - component: {fileID: 3087298749175082075}
   - component: {fileID: 4799365496190786817}
   - component: {fileID: -1381649820387676037}
   - component: {fileID: 3500893535780021650}
@@ -308,33 +307,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7993555, y: 1.2502856}
   m_EdgeRadius: 0
---- !u!114 &3087298749175082075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890387189867618066}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 047bab2b94414ae43bb2376f1489fa54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 25
-  rigid: {fileID: 8982168097524381746}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  feetPosition: {fileID: 6968366531159190658}
-  groundCheckCircle: 0.2
-  bullet: {fileID: 8548552210159664189, guid: 1b8caf6ca2a9e2045b778107067bc81d, type: 3}
-  ShootPoint: {fileID: 2279303109256567696}
-  left: 276
-  right: 275
-  jump: 273
-  pickUp: 0
-  attack: 256
 --- !u!114 &4799365496190786817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,7 +1159,7 @@ RectTransform:
   m_Father: {fileID: 4470435424253460421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1279,7 +1251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3971609740737204652
 RectTransform:
   m_ObjectHideFlags: 0
