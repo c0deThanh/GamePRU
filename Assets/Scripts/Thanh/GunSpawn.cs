@@ -25,12 +25,12 @@ public class GunSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnHeadEveryInterval(1f)); // Start coroutine to spawn the object every 1 second
+        StartCoroutine(SpawnHeadEveryInterval(20f)); // Start coroutine to spawn the object every 1 second
     }
 
     IEnumerator SpawnHeadEveryInterval(float interval)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(10f);
 
         while (true)
         {

@@ -28,6 +28,8 @@ public class EndGame : MonoBehaviour
 
     gamePlayStates.Player_2.Health = gamePlayStates.Player_2.MaxHealth;
     gamePlayStates.Player_1.Health = gamePlayStates.Player_1.MaxHealth;
+    gamePlayStates.Player_1.Amount = gamePlayStates.Player_1.AmountBullet;
+    gamePlayStates.Player_2.Amount = gamePlayStates.Player_2.AmountBullet;
   }
 
   // Update is called once per frame
