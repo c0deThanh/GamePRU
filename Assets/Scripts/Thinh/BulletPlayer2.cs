@@ -18,7 +18,7 @@ public class BulletPlayer2 : MonoBehaviour
     void Update()
     {
         rigid.velocity = new Vector2(GamePlayStates.Instance.Player_2.SpeedBullet * transform.localScale.x, 0);
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 2f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,9 +36,10 @@ public class BulletPlayer2 : MonoBehaviour
                 collision.gameObject.SetActive(false);
             }
             Instantiate(effect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
         
-        Destroy(gameObject);
+        
     }
 }
