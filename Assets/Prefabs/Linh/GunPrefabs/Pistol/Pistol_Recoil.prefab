@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8806624583998930029}
   - component: {fileID: 2879853887572787477}
   - component: {fileID: -2181912732002145902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pistol_Recoil
   m_TagString: Untagged
   m_Icon: {fileID: 0}

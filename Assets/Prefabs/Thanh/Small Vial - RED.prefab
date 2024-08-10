@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4711310969204203017}
   - component: {fileID: 1943861289363224776}
   - component: {fileID: 7137438126373301591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Small Vial - RED
   m_TagString: Untagged
   m_Icon: {fileID: 0}

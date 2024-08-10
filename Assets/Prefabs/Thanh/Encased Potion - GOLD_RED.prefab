@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1366846350035739592}
   - component: {fileID: 6903813537316489536}
   - component: {fileID: 6773034722577934949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Encased Potion - GOLD_RED
   m_TagString: Untagged
   m_Icon: {fileID: 0}

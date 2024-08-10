@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3968371786526315226}
   - component: {fileID: 6985213956628193906}
   - component: {fileID: 3509112696543598633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Large Tonic - RED
   m_TagString: Untagged
   m_Icon: {fileID: 0}

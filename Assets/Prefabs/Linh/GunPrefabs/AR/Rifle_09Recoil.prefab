@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3950776425971997791}
   - component: {fileID: 7667529310659517646}
   - component: {fileID: -5188518122127138184}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rifle_09Recoil
   m_TagString: Untagged
   m_Icon: {fileID: 0}

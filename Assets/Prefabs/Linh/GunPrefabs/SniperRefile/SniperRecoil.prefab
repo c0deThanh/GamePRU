@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7900045066597428412}
   - component: {fileID: 7200316262578212887}
   - component: {fileID: 6834066953413651401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SniperRecoil
   m_TagString: Untagged
   m_Icon: {fileID: 0}

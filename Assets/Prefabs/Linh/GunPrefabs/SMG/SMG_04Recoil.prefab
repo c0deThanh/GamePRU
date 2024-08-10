@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8975491132135192233}
   - component: {fileID: 3084612777283968999}
   - component: {fileID: 6122488838256382945}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SMG_04Recoil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
