@@ -1,5 +1,6 @@
 using GlobalState;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,11 +17,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     AudioClip backGround;
     AudioSource managerSound;
-
+    private bool hasLoadedFinalScene = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.LoadScene("Canvas", LoadSceneMode.Additive);
         if (GamePlayStates.Instance.Player_1.Health == 0)
         {
             GamePlayStates.Instance.Player_1.Health = GamePlayStates.Instance.Player_1.MaxHealth;
@@ -45,6 +47,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!hasLoadedFinalScene&&(GamePlayStates.Instance.Player_2.Health <= 0 || GamePlayStates.Instance.Player_1.Health <= 0))
+        {
+            SceneManager.LoadScene("FinalGame", LoadSceneMode.Additive);
+            Time.timeScale = 0;
+            hasLoadedFinalScene = true;
+        }
     }
 
     public void TakeDamageP1()

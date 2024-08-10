@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6003739844418854706}
   - component: {fileID: 6553609145482895241}
   - component: {fileID: -4081867319272645677}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sniper_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}

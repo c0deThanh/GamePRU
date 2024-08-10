@@ -112,7 +112,7 @@ namespace Behaviour.Player_1
 
                 GameObject bulletEffectClone = Instantiate(bulletEffect, shootPointPresent.transform.position, shootPointPresent.transform.rotation);
                 //soundGun.PlayOneShot(pistolGun);
-                audioManager.PlaySFX(audioManager.pistol_shoot);
+                audioManager.PlaySFX(pistolGun);
                 bulletClone.transform.localScale = transform.localScale * 0.2f;
                 bulletEffectClone.transform.localScale = transform.localScale * 0.02f;
                 bulletEffectClone.transform.position = new Vector3(shootPointPresent.transform.position.x, shootPointPresent.transform.position.y, shootPointPresent.transform.position.z);

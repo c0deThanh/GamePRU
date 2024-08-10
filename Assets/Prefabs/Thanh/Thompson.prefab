@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4190195578387199753}
   - component: {fileID: 8932513059981219559}
   - component: {fileID: 4439014057796842817}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Thompson
   m_TagString: Untagged
   m_Icon: {fileID: 0}

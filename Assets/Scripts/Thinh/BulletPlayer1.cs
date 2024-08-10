@@ -18,7 +18,7 @@ public class BulletPlayer1 : MonoBehaviour
     void Update()
     {
         rigid.velocity = new Vector2(GamePlayStates.Instance.Player_1.SpeedBullet * transform.localScale.x, 0);
-        Destroy(gameObject,1f);
+        Destroy(gameObject,2f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +28,7 @@ public class BulletPlayer1 : MonoBehaviour
         {
             GamePlayStates.Instance.Player_2.Health -= GamePlayStates.Instance.Player_1.Damage;
             // Assuming you have a HealthBar component to update the health UI
-            FindObjectOfType<GameManager>().TakeDamageP2();
+            // FindObjectOfType<GameManager>().TakeDamageP2();
 
 
             if (GamePlayStates.Instance.Player_2.Health <= 0)
@@ -36,9 +36,10 @@ public class BulletPlayer1 : MonoBehaviour
                 collision.gameObject.SetActive(false);
             }
             Instantiate(effect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
         
-        Destroy(gameObject);
+        
     }
 }

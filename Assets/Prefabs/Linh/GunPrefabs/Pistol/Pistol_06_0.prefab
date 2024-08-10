@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8003498083293961233}
   - component: {fileID: 4481902051038316116}
   - component: {fileID: 3013009638312488419}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pistol_06_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

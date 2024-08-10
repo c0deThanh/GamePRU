@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 2642482263492880437}
   - component: {fileID: 8621097722427150967}
   - component: {fileID: 2133457607074070887}
-  - component: {fileID: 6449596401319743598}
   - component: {fileID: 9056850226411641249}
   - component: {fileID: 5994915588772155605}
   - component: {fileID: 434293556558621710}
-  m_Layer: 0
+  - component: {fileID: 7916261383164487881}
+  m_Layer: 7
   m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,33 +110,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &6449596401319743598
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053023307353723195}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &9056850226411641249
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -217,6 +190,33 @@ MonoBehaviour:
   Type: AR
   AnimationGun: {fileID: 7108339969198208228, guid: 340fa61213d6fb745871bab65b2fa43d, type: 3}
   AnimationRecoil: {fileID: -5188518122127138184, guid: eda7ce8d74241374990c107f54ff0fbf, type: 3}
+--- !u!50 &7916261383164487881
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053023307353723195}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1354605179033664074
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 1741101769035411531}
   - component: {fileID: 7434565753681774563}
   - component: {fileID: 6760075050959296656}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Thompson
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +498,7 @@ MonoBehaviour:
   Shoot: {fileID: 8300000, guid: 0a61976af7fd70e4fb73b0f97a281f97, type: 3}
   Type: Thompson
   AnimationGun: {fileID: 7108339969198208228, guid: c93db1f8c4dc37642b70ab6d52fbe11f, type: 3}
-  AnimationRecoil: {fileID: 6122488838256382945, guid: e8ecdd982ad6d6b43983f1cd095d4a5d, type: 3}
+  AnimationRecoil: {fileID: 6122488838256382945, guid: 981c06a1b82e4de4b9c7f71e02c5c523, type: 3}
 --- !u!1 &4501584005955272405
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 529656346755253370}
   - component: {fileID: 3774338719562270021}
   - component: {fileID: 7083374817963566704}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ MonoBehaviour:
   Shoot: {fileID: 8300000, guid: 1c931ad68ae9db346b3ead70a13f8e04, type: 3}
   Type: Sniper
   AnimationGun: {fileID: 7108339969198208228, guid: e2e2f40c79c72724087bd96683e91cfd, type: 3}
-  AnimationRecoil: {fileID: 6834066953413651401, guid: 729478155a97e7148afe83bebb243d3e, type: 3}
+  AnimationRecoil: {fileID: 6834066953413651401, guid: f5bb85b8c1c0c1344b428205bd347421, type: 3}
 --- !u!1 &4851862780326024040
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +887,7 @@ GameObject:
   - component: {fileID: 5175731727231219368}
   - component: {fileID: 510122221772448175}
   - component: {fileID: 4692986931794058659}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   Shoot: {fileID: 8300000, guid: 08bd6d073fa40c74995e49d0b9ac3d85, type: 3}
   Type: Pistol
   AnimationGun: {fileID: 7108339969198208228, guid: 57626ea2127e0ae41bb04f815c3f16ac, type: 3}
-  AnimationRecoil: {fileID: -2181912732002145902, guid: 64a42862147141c4abd374fe6ad9304a, type: 3}
+  AnimationRecoil: {fileID: -2181912732002145902, guid: 3eca5ead46f038049ae5340e9ca3159c, type: 3}
 --- !u!1 &6915059701174655233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,7 +1311,7 @@ GameObject:
   - component: {fileID: 4731320758972870184}
   - component: {fileID: 5075222980533881554}
   - component: {fileID: 2232636762954170934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1512,4 +1512,4 @@ MonoBehaviour:
   Shoot: {fileID: 8300000, guid: 0a61976af7fd70e4fb73b0f97a281f97, type: 3}
   Type: SMG
   AnimationGun: {fileID: 7108339969198208228, guid: c6a7786624b121b4eab590c64176152c, type: 3}
-  AnimationRecoil: {fileID: 3824311501859122620, guid: 97a061cb2e944b044aab07e1243f2d2e, type: 3}
+  AnimationRecoil: {fileID: 3824311501859122620, guid: cb912aacc9aabf2499dd6c8159beeab8, type: 3}
