@@ -18,17 +18,11 @@ public class BulletPlayer2 : MonoBehaviour
     void Update()
     {
         rigid.velocity = new Vector2(GamePlayStates.Instance.Player_2.SpeedBullet * transform.localScale.x, 0);
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 2f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the collided object's layer is "Default" (usually layer 0)
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))
-        {
-            Destroy(gameObject);
-        }
-
         //Debug.Log(GamePlayStates.Instance.Player_2.Damage);
         if (collision.gameObject.tag == "Player1")
         {
@@ -40,10 +34,12 @@ public class BulletPlayer2 : MonoBehaviour
             if (GamePlayStates.Instance.Player_1.Health <= 0)
             {
                 collision.gameObject.SetActive(false);
-
             }
             Instantiate(effect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
 
+        
+        
     }
 }

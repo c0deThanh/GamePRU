@@ -55,14 +55,11 @@ public class PoolScript : MonoBehaviour
             GameObject head = instance.GetPooledObject();
             if (head != null)
             {
-                // Chọn ngẫu nhiên một vị trí spawn từ mảng spawnPoints
                 int randomIndex = Random.Range(0, spawnPoints.Length);
                 Vector3 spawnPosition = spawnPoints[randomIndex].position;
 
-                // Đặt vị trí của đối tượng là vị trí spawn đã chọn
                 head.transform.position = spawnPosition;
                 head.SetActive(true);
-                //head.GetComponent<HeadController>().createHealthEnemy();
             }
             yield return new WaitForSeconds(interval);
         }

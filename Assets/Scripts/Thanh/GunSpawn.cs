@@ -25,33 +25,27 @@ public class GunSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnHeadEveryInterval(1f)); // Start coroutine to spawn the object every 1 second
+        StartCoroutine(SpawnHeadEveryInterval(20f));
     }
-
     IEnumerator SpawnHeadEveryInterval(float interval)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(10f);
 
         while (true)
         {
-            // Check if headInstance is null or not active
             if (headInstance == null || !headInstance.activeInHierarchy)
             {
-                // Select a random prefab from the headPrefab array
                 int randomPrefabIndex = Random.Range(0, headPrefab.Length);
                 GameObject selectedPrefab = headPrefab[randomPrefabIndex];
 
-                // Select a random spawn position from the spawnPoints array
                 int randomIndex = Random.Range(0, spawnPoints.Length);
                 Vector3 spawnPosition = spawnPoints[randomIndex].position;
                 Transform spawnParent = spawnPoints[randomIndex];
 
-                // Instantiate the selected prefab at the spawn position
                 headInstance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
 
                 headInstance.transform.SetParent(spawnParent, true);
                 headInstance.SetActive(true);
-                //headInstance.GetComponent<HeadController>().createHealthEnemy();
             }
             yield return new WaitForSeconds(interval);
         }
